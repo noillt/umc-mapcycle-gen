@@ -1,10 +1,10 @@
-import pymysql.cursors, configparser
+import os, pymysql.cursors, configparser
 
 # Create a ConfigParser object
 config = configparser.ConfigParser()
 
 # Read the configuration file
-config.read('mysql-config.ini')
+config.read(os.path.dirname(os.path.abspath(__file__))+'/mysql-config.ini')
 
 # Get MySQL credentials from the configuration file
 mysql_host = config.get('mysql', 'host')
